@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: citibike_2023
+    database: de-zoomcamp-project-454319
+    schema: zoomcamp_project
+    tables:
+      - name: citibike_2023
+
+  - name: citibike_2024
+    database: de-zoomcamp-project-454319
+    schema: zoomcamp_project
+    tables:
+      - name: citibike_2024
