@@ -1,3 +1,4 @@
+# profiles.yml
 de-zoomcamp-project-454319:
   target: dev
   outputs:
@@ -5,6 +6,25 @@ de-zoomcamp-project-454319:
       type: bigquery
       method: service-account-json
       project: de-zoomcamp-project-454319
-      keyfile: /home/yassersakr88/de-zoomcamp/7_project/7.2_data_ingestion_dlt_kestra/gcs-service-account.json
+      dataset: zoomcamp_project_dev  # Dev-specific dataset
+      threads: 4
+      timeout_seconds: 300
+      priority: interactive
+      
+    ci:
+      type: bigquery
+      method: service-account-json
+      project: de-zoomcamp-project-454319
+      dataset: zoomcamp_project_ci
+      threads: 2
+      priority: batch
+      
+    prod:
+      type: bigquery
+      method: service-account-json
+      project: de-zoomcamp-project-454319
       dataset: zoomcamp_project
-      threads: 1
+      threads: 8
+      timeout_seconds: 600
+      priority: interactive
+      partition_expiration_days: 90
