@@ -1,0 +1,17 @@
+# models/schema.yml
+version: 2
+
+models:
+  - name: stg_citibike_trips
+    description: "Staging model for Citi Bike trip data"
+    columns:
+      - name: ride_id
+        description: "Unique identifier for each trip"
+        tests:
+          - unique
+          - not_null
+      - name: trip_distance_km
+        description: "Calculated trip distance in kilometers"
+
+  - name: fct_citibike_trips
+    description: "Fact table with enriched trip data"

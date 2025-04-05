@@ -1,0 +1,30 @@
+# profiles.yml
+de-zoomcamp-project-454319:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account-json
+      project: de-zoomcamp-project-454319
+      dataset: zoomcamp_project_dev  # Dev-specific dataset
+      threads: 4
+      timeout_seconds: 300
+      priority: interactive
+      
+    ci:
+      type: bigquery
+      method: service-account-json
+      project: de-zoomcamp-project-454319
+      dataset: zoomcamp_project_ci
+      threads: 2
+      priority: batch
+      
+    prod:
+      type: bigquery
+      method: service-account-json
+      project: de-zoomcamp-project-454319
+      dataset: zoomcamp_project
+      threads: 8
+      timeout_seconds: 600
+      priority: interactive
+      partition_expiration_days: 90

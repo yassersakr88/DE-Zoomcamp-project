@@ -1,0 +1,14 @@
+id: dbt_daily_refresh
+namespace: citibike
+tasks:
+  - id: dbt_run
+    type: io.kestra.plugin.dbt.cli.Run
+    runner: DBT_RUNNER  # Your Kestra DBT executor
+    projectDir: /home/kestra/citibike_dbt_project
+    commands:
+      - dbt run --target prod
+      - dbt test --target prod
+triggers:
+  - id: schedule
+    type: io.kestra.core.models.triggers.types.Schedule
+    cron: "0 8 * * *"  # 8AM daily
