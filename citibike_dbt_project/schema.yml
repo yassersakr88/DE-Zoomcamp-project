@@ -1,17 +1,52 @@
-# models/schema.yml
 version: 2
 
 models:
   - name: stg_citibike_trips
-    description: "Staging model for Citi Bike trip data"
+    description: "Cleaned staging model for trip data"
     columns:
       - name: ride_id
         description: "Unique identifier for each trip"
         tests:
           - unique
           - not_null
-      - name: trip_distance_km
-        description: "Calculated trip distance in kilometers"
+      - name: duration_minutes
+        description: "Trip duration in minutes"
+        tests:
+          - accepted_values:
+              values: {min: 1}
+
+  - name: dim_stations
+    description: "Dimension table for bike stations"
+    columns:
+      - name: station_id
+        description: "Unique station identifier"
+        tests:
+          - unique
+          - not_null
+      - name: station_name
+        description: "Human-readable station name"
+        tests:
+          - not_null
 
   - name: fct_citibike_trips
-    description: "Fact table with enriched trip data"
+    description: "Fact table for trip analysis"
+    columns:
+      - name: ride_id
+        description: "Unique trip identifier"
+        tests:
+          - unique
+          - not_null
+      - name: started_at
+        description: "Trip start timestamp"
+        tests:
+          - not_null
+
+sources:
+  - name: citibike
+    description: "Raw Citi Bike data from BigQuery"
+    tables:
+      - name: citibike_trips
+        description: "Source table containing trip records"
+        columns:
+          - name: started_at
+            description: "When the trip began (as string)"

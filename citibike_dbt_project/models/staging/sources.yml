@@ -1,14 +1,15 @@
 version: 2
 
 sources:
-  - name: citibike_2023
-    database: de-zoomcamp-project-454319
-    schema: zoomcamp_project
+  - name: citibike
+    description: "Raw Citi Bike trip data"
+    database: citibike-zoomcamp-project  # Your GCP project ID
+    schema: citibike_tripdata           # BigQuery dataset
+    
     tables:
-      - name: citibike_2023_partitioned
-
-  - name: citibike_2024
-    database: de-zoomcamp-project-454319
-    schema: zoomcamp_project
-    tables:
-      - name: citibike_2024_partitioned
+      - name: citibike_trips
+        description: "Raw trip records"
+        loaded_at_field: started_at
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 48, period: hour}

@@ -1,67 +1,31 @@
 {{
   config(
-    materialized='table',
-    schema='core'
+    materialized='incremental',
+    partition_by={
+      'field': 'started_at', 
+      'data_type': 'timestamp',
+      'granularity': 'day'
+    },
+    cluster_by=['start_station_id', 'rider_type']
   )
 }}
 
-with source_trips as (
-    select * from {{ ref('stg_citibike_trips') }}
-),
-
-cleaned_trips as (
-    select
-        ride_id,
-        rideable_type,
-        start_time as started_at,
-        end_time as ended_at,
-        start_station_name,
-        start_station_id,
-        end_station_name,
-        end_station_id,
-        start_lat,
-        start_lng,
-        end_lat,
-        end_lng,
-        member_casual,
-        trip_duration_minutes,
-        trip_distance_km,
-        year,
-        -- Additional data quality checks
-        case
-            when trip_duration_minutes <= 0 then false
-            when trip_distance_km <= 0 then false
-            when start_lat is null or start_lng is null then false
-            when end_lat is null or end_lng is null then false
-            else true
-        end as is_valid_trip
-    from source_trips
-    where 
-        start_time is not null
-        and end_time is not null
-        and start_time < end_time
-)
-
-select
-    ride_id,
-    rideable_type,
-    started_at,
-    ended_at,
-    start_station_name,
-    start_station_id,
-    end_station_name,
-    end_station_id,
-    start_lat,
-    start_lng,
-    end_lat,
-    end_lng,
-    member_casual,
-    trip_duration_minutes,
-    trip_distance_km,
-    year,
-    is_valid_trip,
-    -- Derived metrics
-    round(trip_distance_km / nullif(trip_duration_minutes/60, 0), 2) as avg_speed_kmh,
-    extract(dayofweek from started_at) as day_of_week,
-    extract(hour from started_at) as hour_of_day
-from cleaned_trips
+SELECT
+  t.ride_id,
+  t.started_at,
+  t.ended_at,
+  t.duration_minutes,
+  t.start_station_id,
+  s.station_name AS start_station_name,
+  t.rider_type,
+  EXTRACT(HOUR FROM t.started_at) AS hour_of_day,
+  FORMAT_DATE('%A', DATE(t.started_at)) AS day_of_week
+FROM `citibike-zoomcamp-project`.`zoomcamp_project_staging`.`stg_citibike_trips` t
+LEFT JOIN `citibike-zoomcamp-project`.`zoomcamp_project_analytics`.`dim_stations` s
+  ON t.start_station_id = s.station_id
+WHERE t.started_at IS NOT NULL
+  AND t.ended_at IS NOT NULL
+  AND t.started_at < t.ended_at
+{% if is_incremental() %}
+  AND t.started_at >= (SELECT MAX(started_at) FROM {{ this }})
+{% endif %}

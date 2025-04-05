@@ -1,17 +1,9 @@
-# dbt_project.yml
 name: 'citibike_dbt_project'
 version: '1.0.0'
 config-version: 2
 
-# Environment Configuration
-profile: 'de-zoomcamp-project-454319'
-target-path: "target"
-clean-targets:
-  - "target"
-  - "dbt_packages"
-  - "target_ci"
+profile: 'citibike_dbt_project'
 
-# Directory Structure
 model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
@@ -19,42 +11,20 @@ seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
-# Model Configuration
+target-path: "target"  # This is the only path-related config needed
+clean-targets: ["target", "dbt_packages"]
+
 models:
   citibike_dbt_project:
     staging:
-      materialized: view
+      +materialized: view
       +schema: staging
-      +tags: ["staging"]
-      +persist_docs:
-        relation: true
-        columns: true
-      
     core:
-      materialized: table
-      +schema: core
-      +tags: ["core"]
-      +partition_by:
-        field: started_at
-        data_type: timestamp
-        granularity: day
-
-    marts:
-      materialized: table
+      +materialized: table
       +schema: analytics
-      +tags: ["marts"]
+    mart:
+      +materialized: table
+      +schema: analytics
 
-# Variables for Kestra and environment control
 vars:
-  kestra_execution: false
-  env: "dev"
-  partition_clause: "DATE(started_at) = CURRENT_DATE()"  # Dynamic partition filter
-
-target-paths:
-  ci: "target_ci"
-  dev: "target_dev"
-  prod: "target_prod"
-
-# BigQuery-specific configurations
-require-partition-filter: true  # Enforces partition filtering
-partition-expiration-days: 90   # Auto-expire old partitions
+  partition_by: "DATE(started_at)"  # Define as variable instead of direct config
