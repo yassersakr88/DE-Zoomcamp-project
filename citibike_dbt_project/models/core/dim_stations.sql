@@ -1,43 +1,30 @@
--- models/core/dim_stations.sql
 {{
   config(
     materialized='table',
-    schema='core'
+    alias='dim_stations',
+    unique_key='station_id'
   )
 }}
 
-WITH station_starts AS (
+WITH station_data AS (
   SELECT
     start_station_id AS station_id,
-    start_station_name AS station_name,
-    start_lat AS latitude,
-    start_lng AS longitude,
-    COUNT(*) AS trip_count_start,
-    'start' AS station_type
+    start_station_name AS station_name
   FROM {{ ref('stg_citibike_trips') }}
-  GROUP BY 1, 2, 3, 4
-),
-
-station_ends AS (
+  WHERE start_station_id IS NOT NULL
+  
+  UNION DISTINCT
+  
   SELECT
     end_station_id AS station_id,
-    end_station_name AS station_name,
-    end_lat AS latitude,
-    end_lng AS longitude,
-    COUNT(*) AS trip_count_end,
-    'end' AS station_type
+    end_station_name AS station_name
   FROM {{ ref('stg_citibike_trips') }}
-  GROUP BY 1, 2, 3, 4
+  WHERE end_station_id IS NOT NULL
 )
 
 SELECT
-  COALESCE(s.station_id, e.station_id) AS station_id,
-  COALESCE(s.station_name, e.station_name) AS station_name,
-  COALESCE(s.latitude, e.latitude) AS latitude,
-  COALESCE(s.longitude, e.longitude) AS longitude,
-  COALESCE(s.trip_count_start, 0) AS trip_count_start,
-  COALESCE(e.trip_count_end, 0) AS trip_count_end,
-  (COALESCE(s.trip_count_start, 0) + (COALESCE(e.trip_count_end, 0)) AS total_trip_count
-FROM station_starts s
-FULL OUTER JOIN station_ends e
-  ON s.station_id = e.station_id
+  station_id,
+  ANY_VALUE(station_name) AS station_name,
+  CURRENT_TIMESTAMP() AS dbt_updated_at
+FROM station_data
+GROUP BY station_id
