@@ -40,6 +40,12 @@ models:
         description: "Trip start timestamp"
         tests:
           - not_null
+  
+  - name: rider_behavior
+    config:
+      materialized: table
+      partition_by: started_at
+      cluster_by: [rider_type, month]
 
 sources:
   - name: citibike

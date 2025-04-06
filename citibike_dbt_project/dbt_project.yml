@@ -25,6 +25,11 @@ models:
     mart:
       +materialized: table
       +schema: analytics
+      rider_behavior:
+        +partition_by:
+          field: started_at
+          data_type: timestamp  # or "date" if you've casted it
+        +cluster_by: ['rider_type', 'month']
 
 vars:
   partition_by: "DATE(started_at)"  # Define as variable instead of direct config
