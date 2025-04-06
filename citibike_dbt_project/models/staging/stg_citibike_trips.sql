@@ -1,4 +1,3 @@
--- models/staging/stg_citibike_trips.sql
 {{
   config(
     materialized='view'
@@ -9,10 +8,9 @@ SELECT
   ride_id,
   CAST(started_at AS TIMESTAMP) AS started_at,
   CAST(ended_at AS TIMESTAMP) AS ended_at,
-  -- Calculate duration in minutes from timestamps
   TIMESTAMP_DIFF(
-    PARSE_TIMESTAMP('%Y-%m-%d %H:%M:%S', ended_at),
-    PARSE_TIMESTAMP('%Y-%m-%d %H:%M:%S', started_at),
+    CAST(ended_at AS TIMESTAMP),
+    CAST(started_at AS TIMESTAMP),
     MINUTE
   ) AS duration_minutes,
   start_station_id,
