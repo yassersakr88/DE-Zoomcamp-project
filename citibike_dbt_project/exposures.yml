@@ -1,0 +1,13 @@
+version: 2
+
+exposures:
+  - name: citibike_dashboard
+    description: "A dashboard used by data analysts to track Citi Bike trips"
+    type: dashboard
+    owner:
+      name: "Yasser Sakr"
+      email: "yasser.mansour88@gmail.com"
+    url: ""
+    depends_on:
+      - ref('citibike_tripdata')
+    maturity: high

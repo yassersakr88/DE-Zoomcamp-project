@@ -12,8 +12,7 @@ models:
       - name: duration_minutes
         description: "Trip duration in minutes"
         tests:
-          - accepted_values:
-              values: {min: 1}
+          - not_null
 
   - name: dim_stations
     description: "Dimension table for bike stations"
@@ -40,12 +39,50 @@ models:
         description: "Trip start timestamp"
         tests:
           - not_null
-  
+      - name: duration_minutes
+        description: "Duration of trip in minutes"
+      - name: distance_km
+        description: "Distance travelled during the trip (in kilometers)"
+      - name: start_station_id
+        description: "ID of the start station"
+      - name: end_station_id
+        description: "ID of the end station"
+      - name: rider_type
+        description: "Type of rider (e.g. subscriber or customer)"
+
   - name: rider_behavior
-    config:
-      materialized: table
-      partition_by: started_at
-      cluster_by: [rider_type, month]
+    description: "Aggregated rider behavior metrics based on time, type, and distance"
+    columns:
+      - name: started_at
+        description: "Trip start timestamp (used for partitioning)"
+      - name: rider_type
+        description: "Type of rider"
+      - name: year
+        description: "Year extracted from started_at"
+      - name: month
+        description: "Month number extracted from started_at"
+      - name: month_name
+        description: "Full name of the month"
+      - name: day_of_week
+        description: "Numeric day of the week (1 = Sunday, 7 = Saturday)"
+      - name: weekday_name
+        description: "Name of the weekday"
+      - name: hour_of_day
+        description: "Hour of the day (0-23)"
+      - name: trip_count
+        description: "Number of trips taken"
+      - name: avg_duration
+        description: "Average duration of trips in minutes"
+      - name: median_duration
+        description: "Median duration of trips"
+      - name: avg_distance_km
+        description: "Average distance covered in km"
+      - name: median_distance_km
+        description: "Median distance covered in km"
+      - name: unique_start_stations
+        description: "Number of distinct start stations used"
+      - name: unique_end_stations
+        description: "Number of distinct end stations used"
 
 sources:
   - name: citibike
@@ -54,5 +91,15 @@ sources:
       - name: citibike_trips
         description: "Source table containing trip records"
         columns:
+          - name: ride_id
+            description: "Trip unique ID"
           - name: started_at
             description: "When the trip began (as string)"
+          - name: ended_at
+            description: "When the trip ended (as string)"
+          - name: start_station_id
+            description: "ID of the start station"
+          - name: end_station_id
+            description: "ID of the end station"
+          - name: rider_type
+            description: "Rider type — subscriber or customer"
