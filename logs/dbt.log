@@ -1,0 +1,31 @@
+[0m19:21:52.033462 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77a0972dfce0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77a0972ada00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77a0972de750>]}
+
+
+============================== 19:21:52.042706 | a97307b5-ed73-48b8-ae4f-3a4a4c55cac4 ==============================
+[0m19:21:52.042706 [info ] [MainThread]: Running with dbt=1.9.4
+[0m19:21:52.043676 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/yassersakr88/de-zoomcamp/04_analytics_engineering/week4_hw', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt init citibike_dbt', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m19:21:52.066639 [info ] [MainThread]: Creating dbt configuration folder at /home/yassersakr88/de-zoomcamp/04_analytics_engineering/week4_hw
+[0m19:21:52.069651 [debug] [MainThread]: Starter project path: /home/yassersakr88/de-zoomcamp/.venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m19:21:52.075153 [info ] [MainThread]: 
+Your new dbt project "citibike_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m19:21:52.076412 [info ] [MainThread]: Setting up your profile.
+[0m19:27:26.177390 [info ] [MainThread]: Profile citibike_dbt written to /home/yassersakr88/de-zoomcamp/04_analytics_engineering/week4_hw/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m19:27:26.179170 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 334.2573, "process_in_blocks": "189280", "process_kernel_time": 0.570736, "process_mem_max_rss": "231332", "process_out_blocks": "80", "process_user_time": 4.526634}
+[0m19:27:26.180122 [debug] [MainThread]: Command `dbt init` succeeded at 19:27:26.179897 after 334.26 seconds
+[0m19:27:26.181107 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77a0972ada00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77a097ca98b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77a0970e6f00>]}
+[0m19:27:26.182546 [debug] [MainThread]: Flushing usage events
+[0m19:27:26.912395 [debug] [MainThread]: An error was encountered while trying to flush usage events

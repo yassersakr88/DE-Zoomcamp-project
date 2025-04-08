@@ -1,0 +1,81 @@
+[2025-04-08T22:01:30.304+0000] {processor.py:161} INFO - Started process (PID=288) to work on /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:01:30.305+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/citibike_pipeline.py for tasks to queue
+[2025-04-08T22:01:30.309+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:01:30.309+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:01:30.325+0000] {processor.py:840} INFO - DAG(s) 'citibike_batch_pipeline' retrieved from /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:01:30.724+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:01:30.722+0000] {override.py:1769} INFO - Created Permission View: can read on DAG:citibike_batch_pipeline
+[2025-04-08T22:01:30.747+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:01:30.746+0000] {override.py:1769} INFO - Created Permission View: can delete on DAG:citibike_batch_pipeline
+[2025-04-08T22:01:30.761+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:01:30.760+0000] {override.py:1769} INFO - Created Permission View: can edit on DAG:citibike_batch_pipeline
+[2025-04-08T22:01:30.762+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:01:30.761+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-08T22:01:30.784+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:01:30.784+0000] {dag.py:3058} INFO - Creating ORM DAG for citibike_batch_pipeline
+[2025-04-08T22:01:30.809+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:01:30.808+0000] {dag.py:3823} INFO - Setting next_dagrun for citibike_batch_pipeline to 2025-04-07 00:00:00+00:00, run_after=2025-04-08 00:00:00+00:00
+[2025-04-08T22:01:30.877+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/citibike_pipeline.py took 0.579 seconds
+[2025-04-08T22:02:01.511+0000] {processor.py:161} INFO - Started process (PID=296) to work on /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:02:01.512+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/citibike_pipeline.py for tasks to queue
+[2025-04-08T22:02:01.515+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:02:01.514+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:02:01.529+0000] {processor.py:840} INFO - DAG(s) 'citibike_batch_pipeline' retrieved from /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:02:01.560+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:02:01.559+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-08T22:02:01.590+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:02:01.590+0000] {dag.py:3823} INFO - Setting next_dagrun for citibike_batch_pipeline to 2025-04-07 00:00:00+00:00, run_after=2025-04-08 00:00:00+00:00
+[2025-04-08T22:02:01.622+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/citibike_pipeline.py took 0.116 seconds
+[2025-04-08T22:02:31.829+0000] {processor.py:161} INFO - Started process (PID=303) to work on /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:02:31.933+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/citibike_pipeline.py for tasks to queue
+[2025-04-08T22:02:32.208+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:02:32.183+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:02:32.310+0000] {processor.py:840} INFO - DAG(s) 'citibike_batch_pipeline' retrieved from /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:02:32.352+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:02:32.352+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-08T22:02:32.388+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:02:32.388+0000] {dag.py:3823} INFO - Setting next_dagrun for citibike_batch_pipeline to 2025-04-07 00:00:00+00:00, run_after=2025-04-08 00:00:00+00:00
+[2025-04-08T22:02:32.421+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/citibike_pipeline.py took 0.598 seconds
+[2025-04-08T22:03:03.141+0000] {processor.py:161} INFO - Started process (PID=311) to work on /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:03:03.144+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/citibike_pipeline.py for tasks to queue
+[2025-04-08T22:03:03.150+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:03:03.148+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:03:03.176+0000] {processor.py:840} INFO - DAG(s) 'citibike_batch_pipeline' retrieved from /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:03:03.222+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:03:03.222+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-08T22:03:03.266+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:03:03.266+0000] {dag.py:3823} INFO - Setting next_dagrun for citibike_batch_pipeline to 2025-04-07 00:00:00+00:00, run_after=2025-04-08 00:00:00+00:00
+[2025-04-08T22:03:03.298+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/citibike_pipeline.py took 0.166 seconds
+[2025-04-08T22:03:33.491+0000] {processor.py:161} INFO - Started process (PID=319) to work on /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:03:33.492+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/citibike_pipeline.py for tasks to queue
+[2025-04-08T22:03:33.495+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:03:33.494+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:03:33.509+0000] {processor.py:840} INFO - DAG(s) 'citibike_batch_pipeline' retrieved from /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:03:33.543+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:03:33.542+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-08T22:03:33.574+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:03:33.573+0000] {dag.py:3823} INFO - Setting next_dagrun for citibike_batch_pipeline to 2025-04-07 00:00:00+00:00, run_after=2025-04-08 00:00:00+00:00
+[2025-04-08T22:03:33.601+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/citibike_pipeline.py took 0.113 seconds
+[2025-04-08T22:04:03.819+0000] {processor.py:161} INFO - Started process (PID=327) to work on /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:04:03.821+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/citibike_pipeline.py for tasks to queue
+[2025-04-08T22:04:03.824+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:04:03.824+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:04:03.841+0000] {processor.py:840} INFO - DAG(s) 'citibike_batch_pipeline' retrieved from /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:04:03.873+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:04:03.872+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-08T22:04:03.905+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:04:03.905+0000] {dag.py:3823} INFO - Setting next_dagrun for citibike_batch_pipeline to 2025-04-07 00:00:00+00:00, run_after=2025-04-08 00:00:00+00:00
+[2025-04-08T22:04:03.932+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/citibike_pipeline.py took 0.117 seconds
+[2025-04-08T22:04:34.120+0000] {processor.py:161} INFO - Started process (PID=335) to work on /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:04:34.121+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/citibike_pipeline.py for tasks to queue
+[2025-04-08T22:04:34.124+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:04:34.124+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:04:34.141+0000] {processor.py:840} INFO - DAG(s) 'citibike_batch_pipeline' retrieved from /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:04:34.177+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:04:34.177+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-08T22:04:34.210+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:04:34.209+0000] {dag.py:3823} INFO - Setting next_dagrun for citibike_batch_pipeline to 2025-04-07 00:00:00+00:00, run_after=2025-04-08 00:00:00+00:00
+[2025-04-08T22:04:34.237+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/citibike_pipeline.py took 0.123 seconds
+[2025-04-08T22:05:04.433+0000] {processor.py:161} INFO - Started process (PID=343) to work on /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:05:04.436+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/citibike_pipeline.py for tasks to queue
+[2025-04-08T22:05:04.438+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:05:04.438+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:05:04.456+0000] {processor.py:840} INFO - DAG(s) 'citibike_batch_pipeline' retrieved from /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:05:04.495+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:05:04.494+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-08T22:05:04.537+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:05:04.537+0000] {dag.py:3823} INFO - Setting next_dagrun for citibike_batch_pipeline to 2025-04-07 00:00:00+00:00, run_after=2025-04-08 00:00:00+00:00
+[2025-04-08T22:05:04.562+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/citibike_pipeline.py took 0.133 seconds
+[2025-04-08T22:05:34.772+0000] {processor.py:161} INFO - Started process (PID=351) to work on /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:05:34.773+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/citibike_pipeline.py for tasks to queue
+[2025-04-08T22:05:34.776+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:05:34.775+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:05:34.791+0000] {processor.py:840} INFO - DAG(s) 'citibike_batch_pipeline' retrieved from /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:05:34.821+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:05:34.821+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-08T22:05:34.850+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:05:34.850+0000] {dag.py:3823} INFO - Setting next_dagrun for citibike_batch_pipeline to 2025-04-07 00:00:00+00:00, run_after=2025-04-08 00:00:00+00:00
+[2025-04-08T22:05:34.879+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/citibike_pipeline.py took 0.113 seconds
+[2025-04-08T22:06:05.090+0000] {processor.py:161} INFO - Started process (PID=359) to work on /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:06:05.092+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/citibike_pipeline.py for tasks to queue
+[2025-04-08T22:06:05.095+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:06:05.094+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:06:05.112+0000] {processor.py:840} INFO - DAG(s) 'citibike_batch_pipeline' retrieved from /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:06:05.144+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:06:05.144+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-08T22:06:05.178+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:06:05.178+0000] {dag.py:3823} INFO - Setting next_dagrun for citibike_batch_pipeline to 2025-04-07 00:00:00+00:00, run_after=2025-04-08 00:00:00+00:00
+[2025-04-08T22:06:05.205+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/citibike_pipeline.py took 0.120 seconds
+[2025-04-08T22:06:35.433+0000] {processor.py:161} INFO - Started process (PID=367) to work on /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:06:35.434+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/citibike_pipeline.py for tasks to queue
+[2025-04-08T22:06:35.438+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:06:35.437+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:06:35.453+0000] {processor.py:840} INFO - DAG(s) 'citibike_batch_pipeline' retrieved from /opt/airflow/dags/citibike_pipeline.py
+[2025-04-08T22:06:35.487+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:06:35.486+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-04-08T22:06:35.518+0000] {logging_mixin.py:188} INFO - [2025-04-08T22:06:35.518+0000] {dag.py:3823} INFO - Setting next_dagrun for citibike_batch_pipeline to 2025-04-07 00:00:00+00:00, run_after=2025-04-08 00:00:00+00:00
+[2025-04-08T22:06:35.547+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/citibike_pipeline.py took 0.118 seconds
