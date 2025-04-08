@@ -1,0 +1,4 @@
+[2025-04-07T16:16:16.061+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dlt_citibike_pipeline.upload_new_data_01 scheduled__2025-01-01T00:00:00+00:00 [queued]>
+[2025-04-07T16:16:16.162+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dlt_citibike_pipeline.upload_new_data_01 scheduled__2025-01-01T00:00:00+00:00 [queued]>
+[2025-04-07T16:16:16.165+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 2
+[2025-04-07T16:16:16.587+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): upload_new_data_01> on 2025-01-01 00:00:00+00:00

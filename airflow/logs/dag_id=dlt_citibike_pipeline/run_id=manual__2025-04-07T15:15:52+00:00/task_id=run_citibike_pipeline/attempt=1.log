@@ -1,0 +1,14 @@
+[2025-04-07T15:16:00.956+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dlt_citibike_pipeline.run_citibike_pipeline manual__2025-04-07T15:15:52+00:00 [queued]>
+[2025-04-07T15:16:00.969+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dlt_citibike_pipeline.run_citibike_pipeline manual__2025-04-07T15:15:52+00:00 [queued]>
+[2025-04-07T15:16:00.969+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-04-07T15:16:00.992+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): run_citibike_pipeline> on 2025-04-07 15:15:52+00:00
+[2025-04-07T15:16:01.007+0000] {standard_task_runner.py:60} INFO - Started process 141 to run task
+[2025-04-07T15:16:01.016+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'dlt_citibike_pipeline', 'run_citibike_pipeline', 'manual__2025-04-07T15:15:52+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/dlt_ingestion_dag.py', '--cfg-path', '/tmp/tmpbm_0_g0u']
+[2025-04-07T15:16:01.018+0000] {standard_task_runner.py:88} INFO - Job 16: Subtask run_citibike_pipeline
+[2025-04-07T15:16:01.094+0000] {task_command.py:423} INFO - Running <TaskInstance: dlt_citibike_pipeline.run_citibike_pipeline manual__2025-04-07T15:15:52+00:00 [running]> on host d53833d9bb94
+[2025-04-07T15:16:01.208+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dlt_citibike_pipeline' AIRFLOW_CTX_TASK_ID='run_citibike_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2025-04-07T15:15:52+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-07T15:15:52+00:00'
+[2025-04-07T15:16:01.211+0000] {dlt_ingestion_dag.py:25} INFO - Running pipeline for year: 2023
+[2025-04-07T15:16:01.318+0000] {logging_mixin.py:188} WARNING - usage: *** [-h] --year YEAR
+[2025-04-07T15:16:01.319+0000] {logging_mixin.py:188} WARNING - ***: error: the following arguments are required: --year
+[2025-04-07T15:16:01.354+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 2
+[2025-04-07T15:16:01.383+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

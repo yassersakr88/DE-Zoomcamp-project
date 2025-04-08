@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+*.parquet
+*.zip
+.DS_Store
+.env
+*.key
+*.json
