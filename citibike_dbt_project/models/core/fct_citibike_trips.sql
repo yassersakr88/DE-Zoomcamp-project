@@ -22,10 +22,10 @@ SELECT
   t.rider_type,
   EXTRACT(HOUR FROM t.started_at) AS hour_of_day,
   FORMAT_DATE('%A', DATE(t.started_at)) AS day_of_week,
-  111.045 * ST_DISTANCE(
-    ST_GEOGPOINT(t.start_lng, t.start_lat),
-    ST_GEOGPOINT(t.end_lng, t.end_lat)
-  ) AS distance_km
+  ST_DISTANCE(
+  ST_GEOGPOINT(t.start_lng, t.start_lat),
+  ST_GEOGPOINT(t.end_lng, t.end_lat)
+) / 1000 AS distance_km
 FROM `citibike-zoomcamp-project`.`zoomcamp_project_staging`.`stg_citibike_trips` t
 LEFT JOIN `citibike-zoomcamp-project`.`zoomcamp_project_analytics`.`dim_stations` s
   ON t.start_station_id = s.station_id
