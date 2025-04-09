@@ -1,5 +1,6 @@
-# Citi Bike Data Engineering Project
 
+# Citi Bike Data Engineering Project
+![project](https://github.com/user-attachments/assets/5e91a5b8-e904-492c-b6c1-56450289b71d)
 ## Overview
 
 This project involves building a data engineering pipeline to process and analyze Citi Bike trip data. The pipeline utilizes several tools and technologies to automate the ingestion, transformation, and loading (ETL) of data from the Citi Bike dataset into Google Cloud Storage (GCS) and BigQuery. The solution also includes data orchestration using Airflow and data transformation using dbt.
@@ -87,11 +88,16 @@ This will create the necessary cloud resources for your data pipeline.
 3. Data Loading: The transformed data is loaded into BigQuery for further analysis and reporting.
 4. Orchestration: Airflow orchestrates the entire pipeline, ensuring smooth execution of tasks.
 
+## Data Insights
+![Screenshot 2025-04-09 180030](https://github.com/user-attachments/assets/01413aef-861f-40bb-a7a0-9eb88606c013)
+![Screenshot 2025-04-09 180044](https://github.com/user-attachments/assets/95fba5bb-0c5a-4c57-989f-f726d5b28b62)
+![Screenshot 2025-04-09 180105](https://github.com/user-attachments/assets/3dc4db20-28c1-4c28-afc4-0fa43893289b)
+
 ## Contributing
 Feel free to fork this repository, create issues, and submit pull requests. Contributions are welcome!
-
-License
-This version removes the "Project Structure" section and refines the formatting. Let me know if you'd like to make any further adjustments!
+Also feel free to contact me through
+- Email -> yasser.mansour88@gmail.com
+- Twitter -> yasser_sakr88
 
 
 
